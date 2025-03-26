@@ -1,36 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery – Kappa Theta Pi</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery Timeline</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Gallery</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="rush.html">Rush Steps</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="members.html">Members</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section>
-        <h2>Our Events</h2>
-        <div class="gallery">
-            <img src="assets/gallery-1.jpg" alt="Event 1">
-            <img src="assets/gallery-2.jpg" alt="Event 2">
-            <img src="assets/gallery-3.jpg" alt="Event 3">
-        </div>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Kappa Theta Pi - Ohio State University</p>
-    </footer>
+  <!-- Header -->
+  <header class="header">
+    <img src="https://via.placeholder.com/50x50?text=ΚΦΠ" alt="Logo" class="logo" />
+    <div class="header-text">
+      <h1>Gallery</h1>
+      <p>Look at what our chapter is doing recently and look ahead to future events!</p>
+    </div>
+  </header>
+
+  <!-- Timeline -->
+  <section class="timeline">
+
+    <svg class="timeline-line" viewBox="0 0 200 1200" preserveAspectRatio="none">
+      <path d="M 100 0 C 100 100, 100 100, 100 200
+               S 100 300, 100 400
+               S 100 500, 100 600
+               S 100 700, 100 800
+               S 100 900, 100 1000" fill="none" stroke="#002D72" stroke-width="3"/>
+    </svg>
+
+    <!-- Event Blocks -->
+    <div class="event left">
+      <h3>Big/Little</h3>
+      <p>Description of event</p>
+    </div>
+    <div class="circle-img" style="top: 120px;"><img src="https://via.placeholder.com/100" /></div>
+
+    <div class="event right">
+      <h3>Involvement Fair</h3>
+      <p>Description of event</p>
+    </div>
+    <div class="circle-img" style="top: 280px;"><img src="https://via.placeholder.com/100" /></div>
+
+    <div class="event left">
+      <h3>Game Night</h3>
+      <p>Description of event</p>
+    </div>
+    <div class="circle-img" style="top: 440px;"><img src="https://via.placeholder.com/100" /></div>
+
+    <div class="event right">
+      <h3>Committee Meeting</h3>
+      <p>Description of event</p>
+    </div>
+    <div class="circle-img" style="top: 600px;"><img src="https://via.placeholder.com/100" /></div>
+
+    <div class="event bottom">
+      <h3>Our next event</h3>
+      <p>Description of event</p>
+    </div>
+    <div class="circle-img" style="top: 760px;"><img src="https://via.placeholder.com/100" /></div>
+
+  </section>
+
+  <!-- Calendar Section -->
+  <section class="calendar">
+    <div class="calendar-embed">
+      Google<br />Calendar<br />Embedded
+    </div>
+  </section>
+
 </body>
 </html>

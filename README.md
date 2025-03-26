@@ -5,9 +5,9 @@ Welcome to the official repository for **Kappa Theta Pi (KTP) at The Ohio State 
 
 ## About Us  
 Kappa Theta Pi (KTP) is OSU’s premier **co-ed professional technology fraternity** dedicated to fostering a community of passionate, driven individuals in tech. We provide:  
-- **Networking opportunities**  
 - **Professional development**  
 - **Technical workshops**  
-- **A strong support system** for students pursuing careers in technology  
+- **Social events**  
+- **Mentorship opportunities**  
 
 ---

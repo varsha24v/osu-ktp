@@ -74,7 +74,7 @@ h2 {
     margin-top: 20px;
 }
 .card {
-    background-color: #1d4e9e;
+    background-color: #2B4D89;
     color: white;
     padding: 20px;
     width: 200px; /* Ensures uniform size */
@@ -138,3 +138,13 @@ footer {
 .gallery img:hover {
     transform: scale(1.05);
 }
+
+.mission_msg {
+    font-family: 'Inter', 'Impact', Haettenschweiler, 'Arial Narrow', sans-serif;
+    font-size: 15px; /* Ensure units are specified, e.g., px */
+    line-height: 1.6;
+    margin: 20px auto;
+    padding: 10px 20px;
+    text-align: center;
+}
+

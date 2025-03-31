@@ -1,72 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery Timeline</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kappa Theta Pi - Gallery</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+        }
+        
+        .logo {
+            color: #2e4f9b;
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        /* Nav Menu */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            padding: 0 20px;
+            font-weight: 500;
+        }
+        
+        .nav-menu a:hover {
+            color: #2e4f9b;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 20px 0 60px;
+        }
+        
+        .gallery-title {
+            font-size: 42px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .gallery-subtitle {
+            font-size: 16px;
+            margin-bottom: 40px;
+            color: #555;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 20px 0 80px;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 120px;
+            width: 4px;
+            background-color: #2e4f9b;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-event {
+            display: flex;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .event-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 40px;
+            border: 4px solid #2e4f9b;
+            z-index: 2;
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .event-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .event-title {
+            background-color: #2e4f9b;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            width: fit-content;
+            text-align: center;
+        }
+        
+        .event-description {
+            background-color: #2e4f9b;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            width: fit-content;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .event-connector {
+            position: absolute;
+            top: 60px;
+            left: 120px;
+            width: 160px;
+            height: 4px;
+            background-color: #2e4f9b;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        
+        .next-event {
+            margin-top: 40px;
+            margin-left: 120px;
+        }
+        
+        .next-event-title {
+            background-color: #2e4f9b;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .next-event-description {
+            background-color: #2e4f9b;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        /* Calendar Section */
+        .calendar-section {
+            background-color: #2e4f9b;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .calendar-container {
+            background-color: #e0e0e0;
+            height: 300px;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .calendar-placeholder {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .footer-content p {
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .event-connector {
+                width: 80px;
+            }
+            
+            .next-event {
+                margin-left: 80px;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+            }
+            
+            .nav-menu a {
+                padding: 10px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="header">
-    <img src="https://via.placeholder.com/50x50?text=ΚΦΠ" alt="Logo" class="logo" />
-    <div class="header-text">
-      <h1>Gallery</h1>
-      <p>Look at what our chapter is doing recently and look ahead to future events!</p>
-    </div>
-  </header>
-
-  <!-- Timeline -->
-  <section class="timeline">
-
-    <svg class="timeline-line" viewBox="0 0 200 1200" preserveAspectRatio="none">
-      <path d="M 100 0 C 100 100, 100 100, 100 200
-               S 100 300, 100 400
-               S 100 500, 100 600
-               S 100 700, 100 800
-               S 100 900, 100 1000" fill="none" stroke="#002D72" stroke-width="3"/>
-    </svg>
-
-    <!-- Event Blocks -->
-    <div class="event left">
-      <h3>Big/Little</h3>
-      <p>Description of event</p>
-    </div>
-    <div class="circle-img" style="top: 120px;"><img src="20250219_111924_C9C7B7.jpg" /></div>
-
-    <div class="event right">
-      <h3>Involvement Fair</h3>
-      <p>Description of event</p>
-    </div>
-    <div class="circle-img" style="top: 280px;"><img src="src\image\involvementFair.jpeg" /></div>
-
-    <div class="event left">
-      <h3>Game Night</h3>
-      <p>Description of event</p>
-    </div>
-    <div class="circle-img" style="top: 440px;"><img src="https://via.placeholder.com/100" /></div>
-
-    <div class="event right">
-      <h3>Committee Meeting</h3>
-      <p>Description of event</p>
-    </div>
-    <div class="circle-img" style="top: 600px;"><img src="https://via.placeholder.com/100" /></div>
-
-    <div class="event bottom">
-      <h3>Our next event</h3>
-      <p>Description of event</p>
-    </div>
-    <div class="circle-img" style="top: 760px;"><img src="https://via.placeholder.com/100" /></div>
-
-  </section>
-
-  <!-- Calendar Section -->
-  <section class="calendar">
-    <div class="calendar-embed">
-      Google<br />Calendar<br />Embedded
-    </div>
-  </section>
-
+    <header>
+        <div class="container">
+            <h1 class="logo">ΚΘΠ</h1>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="rush.html">Rush</a>
+                <a href="members.html">Members</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="gallery-title">Gallery</h2>
+            <p class="gallery-subtitle">Look at what our chapter is doing recently and look ahead to future events!</p>
+            
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-event">
+                    <div class="event-image">
+                        <img src="/api/placeholder/400/320" alt="Involvement Fair">
+                    </div>
+                    <div class="event-connector"></div>
+                    <div class="event-content">
+                        <div class="event-title">Involvement Fair</div>
+                        <div class="event-description">Description of event</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="event-image">
+                        <img src="/api/placeholder/400/320" alt="Big/Little">
+                    </div>
+                    <div class="event-connector"></div>
+                    <div class="event-content">
+                        <div class="event-title">Big/Little</div>
+                        <div class="event-description">Description of event</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="event-image">
+                        <img src="/api/placeholder/400/320" alt="Committee Meeting">
+                    </div>
+                    <div class="event-connector"></div>
+                    <div class="event-content">
+                        <div class="event-title">Committee Meeting</div>
+                        <div class="event-description">Description of event</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-event">
+                    <div class="event-image">
+                        <img src="/api/placeholder/400/320" alt="Game Night">
+                    </div>
+                    <div class="event-connector"></div>
+                    <div class="event-content">
+                        <div class="event-title">Game Night</div>
+                        <div class="event-description">Description of event</div>
+                    </div>
+                </div>
+                
+                <div class="next-event">
+                    <div class="next-event-title">Our next event</div>
+                    <div class="next-event-description">Description of event</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="calendar-section">
+        <div class="container">
+            <div class="calendar-container">
+                <div class="calendar-placeholder">Google</div>
+                <div class="calendar-placeholder">Calendar</div>
+                <div class="calendar-placeholder">Embedded</div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Kappa Theta Pi - The Ohio State University</h3>
+                <p>Est. 2024</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                </div>
+                <p>&copy; 2025 Kappa Theta Pi</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

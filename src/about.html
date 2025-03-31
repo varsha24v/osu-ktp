@@ -3,30 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us – Kappa Theta Pi</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Kappa Theta Pi - About Us</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+        }
+        
+        .logo {
+            color: #2e4f9b;
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        /* Nav Menu */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            padding: 0 20px;
+            font-weight: 500;
+        }
+        
+        .nav-menu a:hover {
+            color: #2e4f9b;
+        }
+        
+        /* About Section */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0;
+            align-items: center;
+        }
+        
+        .about-images {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            margin-right: 20px;
+        }
+        
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-content {
+            flex: 1;
+            padding: 0 20px;
+        }
+        
+        .section-subtitle {
+            color: #2e4f9b;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .section-text {
+            margin-bottom: 25px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2e4f9b;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #1c3a7c;
+        }
+        
+        /* President's Message */
+        .message-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 60px 0;
+            background-color: #e8ecf5;
+            align-items: center;
+        }
+        
+        .message-content {
+            flex: 3;
+            padding-right: 40px;
+        }
+        
+        .message-image {
+            flex: 2;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 400px;
+        }
+        
+        .message-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Pillars Section */
+        .pillars-section {
+            padding: 60px 0;
+        }
+        
+        .pillars-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 30px;
+        }
+        
+        .pillar-card {
+            background-color: #2e4f9b;
+            color: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .pillar-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .pillar-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .pillar-text {
+            font-size: 14px;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            padding: 60px 0;
+            background-color: #e8ecf5;
+        }
+        
+        .mission-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .mission-text {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .footer-content p {
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-section, .message-section {
+                flex-direction: column;
+            }
+            
+            .about-images, .message-image {
+                margin-bottom: 30px;
+                margin-right: 0;
+            }
+            
+            .message-content {
+                padding-right: 0;
+            }
+            
+            .pillars-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+            }
+            
+            .nav-menu a {
+                padding: 10px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>About Kappa Theta Pi</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="rush.html">Rush Steps</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="members.html">Members</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1 class="logo">ΚΘΠ</h1>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="rush.html">Rush</a>
+                <a href="members.html">Members</a>
+            </nav>
+        </div>
     </header>
-
-    <section>
-        <h2>Our Mission</h2>
-        <p>We are dedicated to fostering a community of passionate, driven individuals in tech...</p>
+    
+    <section class="about-section">
+        <div class="container">
+            <div class="about-images">
+                <div class="about-image">
+                    <img src="/api/placeholder/400/320" alt="KTP members">
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/400/320" alt="KTP event">
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/400/320" alt="KTP study session">
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <h3 class="section-subtitle">A BIT</h3>
+                <h2 class="section-title">About Us</h2>
+                <p class="section-text">Kappa Theta Pi (KTP) is a leading professional fraternity uniting individuals with a passion for technology and innovation. Our goal is to cultivate a community of future tech leaders by fostering growth, camaraderie, and professional development. Our mission is to equip members with the resources, mentorship, and support they need to thrive in the tech industry. We are dedicated to excellence, inclusivity, and the continuous pursuit of knowledge.</p>
+                <a href="#" class="btn">EXPLORE MORE</a>
+            </div>
+        </div>
     </section>
     
-    <footer>
-        <p>&copy; 2025 Kappa Theta Pi - Ohio State University</p>
+    <section class="message-section">
+        <div class="container">
+            <div class="message-content">
+                <h2 class="section-title">President's Message</h2>
+                <p class="section-text">Kappa Theta Pi at the University of Texas at Austin is the university's premier co-ed technology fraternity, dedicated to fostering the technical, professional, and social growth of its members while giving back to the community through impactful philanthropic efforts.</p>
+                <p class="section-text">Since its inception, KTP has been a supportive community of like-minded individuals who uplift one another both professionally and personally. Through a variety of technical, professional, social, and community service events, KTP creates immense value for its members, helping them build lifelong networks of professionals and friends.</p>
+                <p class="section-text">Beyond your time on campus, the brotherhood continues for life, offering enduring friendships and a clearer sense of your career aspirations. Join KTP today and become part of a community that shapes both your future and the lives of those around you!</p>
+            </div>
+            
+            <div class="message-image">
+                <img src="/api/placeholder/400/320" alt="KTP President">
+            </div>
+        </div>
+    </section>
+    
+    <section class="pillars-section">
+        <div class="container">
+            <h2 class="pillars-title">Our Pillars</h2>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">💼</div>
+                    <h3 class="pillar-title">Professional Development</h3>
+                    <p class="pillar-text">Interview training, resume building, networking, corporate recruiting</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">🏛️</div>
+                    <h3 class="pillar-title">Alumni Connections</h3>
+                    <p class="pillar-text">Our alumni work worldwide at top firms including FAANG, startups, consultancies, and fintech companies</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">🤝</div>
+                    <h3 class="pillar-title">Social Growth</h3>
+                    <p class="pillar-text">Meet lifelong friends through social events including formals, tailgates, bowling, and apple picking</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">💻</div>
+                    <h3 class="pillar-title">Technological Advancement</h3>
+                    <p class="pillar-text">Build and expand technical skills through team projects and workshops</p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">📚</div>
+                    <h3 class="pillar-title">Academic Support</h3>
+                    <p class="pillar-text">Supportive network of bright tech minds that are always ready to help with coursework or extracurriculars</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="mission-title">Our Mission</h2>
+            <p class="mission-text">Kappa Theta Pi (KTP) is a premier professional fraternity that brings together individuals with a shared passion for technology and innovation. We strive to build a community of future leaders in tech, fostering growth, friendship, and professional development. Thus, our mission is to empower members to achieve their potential in the tech industry by providing resources, mentorship, and a supportive community. We are committed to excellence, inclusivity, and the pursuit of knowledge.</p>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Kappa Theta Pi - The Ohio State University</h3>
+                <p>Est. 2024</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                </div>
+                <p>&copy; 2025 Kappa Theta Pi</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

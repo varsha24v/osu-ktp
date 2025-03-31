@@ -3,30 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kappa Theta Pi – Ohio State</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Kappa Theta Pi | tOSU</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+        }
+        
+        .logo {
+            color: #2e4f9b;
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        /* Nav Menu */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav-menu a {
+            color: #333;
+            text-decoration: none;
+            padding: 0 20px;
+            font-weight: 500;
+        }
+        
+        .nav-menu a:hover {
+            color: #2e4f9b;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background-color: #2e4f9b;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .hero-title {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: #2e4f9b;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #f0f0f0;
+        }
+        
+        /* About Section */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0 60px;
+            align-items: center;
+        }
+        
+        .about-content {
+            flex: 1;
+            padding: 0 20px;
+        }
+        
+        .section-subtitle {
+            color: #2e4f9b;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .section-text {
+            margin-bottom: 25px;
+        }
+        
+        /* Pillars Section */
+        .pillars-section {
+            padding: 60px 0;
+            background-color: #e8ecf5;
+        }
+        
+        .pillars-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 30px;
+        }
+        
+        .pillar-card {
+            background-color: #2e4f9b;
+            color: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .pillar-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .pillar-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .pillar-text {
+            font-size: 14px;
+        }
+        
+        /* Rush Section */
+        .rush-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .rush-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .rush-text {
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .rush-btn {
+            background-color: #2e4f9b;
+            color: white;
+        }
+        
+        .rush-btn:hover {
+            background-color: #1c3a7c;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .footer-content p {
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+            }
+            
+            .pillars-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+            }
+            
+            .nav-menu a {
+                padding: 10px 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Kappa Theta Pi at The Ohio State University!</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="rush.html">Rush Steps</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="members.html">Members</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1 class="logo">ΚΘΠ</h1>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="rush.html">Rush</a>
+                <a href="members.html">Members</a>
+            </nav>
+        </div>
     </header>
     
-    <section>
-        <h2>About Kappa Theta Pi</h2>
-        <p>We are Ohio State University's premier co-ed professional technology fraternity...</p>
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Technology. Professionalism. Brotherhood.</h1>
+            <p class="hero-subtitle">We’re The Ohio State’s premier technology fraternity</p>
+            <a href="#rush" class="btn">Learn More About Rush</a>
+        </div>
+    </section>
+
+    <section id="rush" class="rush-section">
+        <div class="container">
+            <h2 class="rush-title">Interested in Joining?</h2>
+            <p class="rush-text">Fall 2025 Rush begins September 12th! Join us to learn more about Kappa Theta Pi and how you can become part of Michigan's premier technology fraternity.</p>
+            <a href="#" class="btn rush-btn">Rush Information</a>
+        </div>
     </section>
     
-    <footer>
-        <p>&copy; 2025 Kappa Theta Pi - Ohio State University</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Kappa Theta Pi - The Ohio State University</h3>
+                <p>Est. 2024</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                </div>
+                <p>&copy; 2025 Kappa Theta Pi</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

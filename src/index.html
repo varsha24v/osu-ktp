@@ -1,290 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kappa Theta Pi | tOSU</title>
-    <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            padding: 20px 0;
-        }
-        
-        .logo {
-            color: #2e4f9b;
-            font-size: 48px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        /* Nav Menu */
-        .nav-menu {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-        
-        .nav-menu a {
-            color: #333;
-            text-decoration: none;
-            padding: 0 20px;
-            font-weight: 500;
-        }
-        
-        .nav-menu a:hover {
-            color: #2e4f9b;
-        }
-        
-        /* Hero Section */
-        .hero-section {
-            background-color: #2e4f9b;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .hero-title {
-            font-size: 42px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        
-        .hero-subtitle {
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: white;
-            color: #2e4f9b;
-            padding: 12px 24px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #f0f0f0;
-        }
-        
-        /* About Section */
-        .about-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 40px 0 60px;
-            align-items: center;
-        }
-        
-        .about-content {
-            flex: 1;
-            padding: 0 20px;
-        }
-        
-        .section-subtitle {
-            color: #2e4f9b;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        
-        .section-title {
-            font-size: 36px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        
-        .section-text {
-            margin-bottom: 25px;
-        }
-        
-        /* Pillars Section */
-        .pillars-section {
-            padding: 60px 0;
-            background-color: #e8ecf5;
-        }
-        
-        .pillars-title {
-            font-size: 36px;
-            margin-bottom: 40px;
-            font-weight: bold;
-            text-align: center;
-        }
-        
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 30px;
-        }
-        
-        .pillar-card {
-            background-color: #2e4f9b;
-            color: white;
-            padding: 30px 20px;
-            border-radius: 10px;
-            text-align: center;
-            height: 100%;
-        }
-        
-        .pillar-icon {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        
-        .pillar-title {
-            font-size: 20px;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-        
-        .pillar-text {
-            font-size: 14px;
-        }
-        
-        /* Rush Section */
-        .rush-section {
-            padding: 60px 0;
-            text-align: center;
-        }
-        
-        .rush-title {
-            font-size: 36px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        
-        .rush-text {
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        
-        .rush-btn {
-            background-color: #2e4f9b;
-            color: white;
-        }
-        
-        .rush-btn:hover {
-            background-color: #1c3a7c;
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-content h3 {
-            margin-bottom: 10px;
-        }
-        
-        .footer-content p {
-            margin-bottom: 20px;
-        }
-        
-        .social-links {
-            margin-bottom: 20px;
-        }
-        
-        .social-links a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        
-        .footer-links a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .about-section {
-                flex-direction: column;
-            }
-            
-            .pillars-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-            
-            .nav-menu {
-                flex-wrap: wrap;
-            }
-            
-            .nav-menu a {
-                padding: 10px 15px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kappa Theta Pi | Ohio State</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --brand:#101015; --accent:#111827; --ktp:#0f172a; --link:#1f2937; }
+    html, body { height:100%; }
+    body { font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"; }
+    .fade-in{opacity:0;animation:fadeIn 1.2s ease-out forwards}
+    @keyframes fadeIn{to{opacity:1}}
+    .link-underline{position:relative}
+    .link-underline:after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:#0ea5e9;transition:width .25s ease}
+    .link-underline:hover:after{width:100%}
+    .nav-solid{background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(10px); box-shadow: 0 10px 30px rgba(2,6,23,.08)}
+  </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1 class="logo">ΚΘΠ</h1>
-            <nav class="nav-menu">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="rush.html">Rush</a>
-                <a href="members.html">Members</a>
-            </nav>
-        </div>
-    </header>
-    
-    <section id="home" class="hero-section">
-        <div class="container">
-            <h1 class="hero-title">Technology. Professionalism. Brotherhood.</h1>
-            <p class="hero-subtitle">We’re The Ohio State’s premier technology fraternity</p>
-            <a href="#rush" class="btn">Learn More About Rush</a>
-        </div>
-    </section>
+<body class="bg-black text-white selection:bg-sky-300/40 selection:text-black">
 
-    <section id="rush" class="rush-section">
-        <div class="container">
-            <h2 class="rush-title">Interested in Joining?</h2>
-            <p class="rush-text">Fall 2025 Rush begins September 12th! Join us to learn more about Kappa Theta Pi and how you can become part of Michigan's premier technology fraternity.</p>
-            <a href="#" class="btn rush-btn">Rush Information</a>
+  <!-- NAVBAR -->
+  <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center justify-between py-4">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-full border border-white/70 bg-white/10 backdrop-blur">
+            <span class="text-sm font-semibold tracking-wider">ΚΘΠ</span>
+          </span>
+          <div class="hidden sm:block">
+            <p class="text-sm font-medium tracking-wide text-white/80" id="site-title-dark">Kappa Theta Pi</p>
+            <p class="text-[11px] uppercase tracking-widest text-white/50" id="site-sub-dark">Ohio State Chapter</p>
+          </div>
+          <div class="hidden sm:block text-slate-900" id="site-title-light" style="display:none">
+            <p class="text-sm font-semibold tracking-wide">Kappa Theta Pi</p>
+            <p class="text-[11px] uppercase tracking-widest">Ohio State Chapter</p>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm">
+          <a href="index.html" class="link-underline">Home</a>
+          <a href="about.html" class="link-underline">About Us</a>
+          <a href="members.html" class="link-underline">Members</a>
+          <a href="rush.html" class="link-underline">Rush</a>
+          <a href="gallery.html" class="link-underline">Gallery</a>
+          <a href="contact.html" class="link-underline">Contact</a>
+          <a href="apply.html" class="ml-2 inline-flex items-center rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-black shadow-sm transition hover:shadow-md hover:-translate-y-0.5">Apply Now</a>
         </div>
-    </section>
-    
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <h3>Kappa Theta Pi - The Ohio State University</h3>
-                <p>Est. 2024</p>
-                <div class="social-links">
-                    <a href="#">Instagram</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Facebook</a>
-                </div>
-                <p>&copy; 2025 Kappa Theta Pi</p>
-            </div>
+
+        <button id="menuBtn" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20" aria-label="Open Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+        </button>
+      </nav>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-black/90 backdrop-blur">
+      <div class="mx-auto max-w-7xl px-6 py-4 space-y-3 text-sm">
+        <a class="block py-2" href="index.html">Home</a>
+        <a class="block py-2" href="about.html">About Us</a>
+        <a class="block py-2" href="members.html">Members</a>
+        <a class="block py-2" href="rush.html">Rush</a>
+        <a class="block py-2" href="gallery.html">Gallery</a>
+        <a class="block py-2" href="contact.html">Contact</a>
+        <a href="apply.html" class="mt-2 inline-flex items-center rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-black">Apply Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative h-screen w-full overflow-hidden">
+    <img src="images/group-photo.jpg" alt="KTP Group" class="absolute inset-0 h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/70"></div>
+
+    <!-- Center copy moved lower -->
+    <div class="relative z-10 flex h-full flex-col items-center justify-end pb-28 px-6 text-center">
+      <h1 class="fade-in text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight drop-shadow-xl">Kappa Theta Pi</h1>
+      <p class="mt-4 max-w-2xl text-base sm:text-lg text-white/90 fade-in" style="animation-delay:.15s">Ohio State University • Professional Co-Ed Technology Fraternity</p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4 fade-in" style="animation-delay:.3s">
+        <a href="about.html" class="inline-flex items-center rounded-full bg-white/10 px-5 py-2.5 text-sm font-medium backdrop-blur transition hover:bg-white/20">Learn More</a>
+        <a href="apply.html" class="inline-flex items-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black shadow-lg shadow-black/20 transition hover:-translate-y-0.5">Apply Now</a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-center text-xs text-white/80">
+      <div class="mx-auto h-8 w-4 rounded-full border border-white/60">
+        <span class="mx-auto mt-1 block h-2 w-1.5 animate-bounce rounded bg-white/90"></span>
+      </div>
+      <p class="mt-2 tracking-widest">SCROLL</p>
+    </div>
+  </section>
+
+  <section class="bg-white text-slate-900">
+    <div class="mx-auto max-w-6xl px-6 py-14 grid gap-8 md:grid-cols-3">
+      <div class="rounded-2xl border border-slate-200 p-6 shadow-sm">
+        <h3 class="text-base font-semibold">Professional Development</h3>
+        <p class="mt-2 text-sm text-slate-600">Workshops, interview prep, and mentorship to help members thrive in tech.</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 p-6 shadow-sm">
+        <h3 class="text-base font-semibold">Community</h3>
+        <p class="mt-2 text-sm text-slate-600">A close-knit, inclusive community with socials, service, and tradition.</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 p-6 shadow-sm">
+        <h3 class="text-base font-semibold">Projects & Impact</h3>
+        <p class="mt-2 text-sm text-slate-600">Hands-on committees and cross-discipline projects that ship.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-black">
+    <div class="mx-auto max-w-7xl px-6 py-10">
+      <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
+        <p class="text-sm text-white/60">© 2025 Kappa Theta Pi — Ohio State Chapter</p>
+        <div class="flex items-center gap-5">
+          <a href="#" class="opacity-80 transition hover:opacity-100" aria-label="Instagram">
+            <img src="images/instagram-icon.svg" class="h-5 w-5" alt="Instagram" />
+          </a>
+          <a href="#" class="opacity-80 transition hover:opacity-100" aria-label="LinkedIn">
+            <img src="images/linkedin-icon.svg" class="h-5 w-5" alt="LinkedIn" />
+          </a>
+          <a href="#" class="opacity-80 transition hover:opacity-100" aria-label="GitHub">
+            <img src="images/github-icon.svg" class="h-5 w-5" alt="GitHub" />
+          </a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click',()=> mobileMenu.classList.toggle('hidden'));
+
+    const nav = document.getElementById('nav');
+    const titleDark = document.getElementById('site-title-dark');
+    const subDark = document.getElementById('site-sub-dark');
+    const titleLight = document.getElementById('site-title-light');
+
+    const setSolid = (solid)=>{
+      if(solid){
+        nav.classList.add('nav-solid','text-slate-900');
+        nav.classList.remove('text-white');
+        titleDark?.parentElement?.classList.add('hidden');
+        titleLight?.style.setProperty('display','block');
+      } else {
+        nav.classList.remove('nav-solid','text-slate-900');
+        nav.classList.add('text-white');
+        titleDark?.parentElement?.classList.remove('hidden');
+        titleLight?.style.setProperty('display','none');
+      }
+    }
+
+    const onScroll = ()=> setSolid(window.scrollY>10);
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+  </script>
 </body>
 </html>

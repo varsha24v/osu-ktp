@@ -1,37 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rush Steps – Kappa Theta Pi</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rush | Kappa Theta Pi — Ohio State</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    .fade-in{opacity:0;animation:fadeIn 1.2s ease-out forwards}
+    @keyframes fadeIn{to{opacity:1}}
+    .link-underline{position:relative}
+    .link-underline:after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:#0ea5e9;transition:width .25s ease}
+    .link-underline:hover:after{width:100%}
+    .nav-solid{background:rgba(255,255,255,.95);backdrop-filter:saturate(180%) blur(10px);box-shadow:0 10px 30px rgba(2,6,23,.08)}
+    .card{transition:transform .18s ease, box-shadow .18s ease}
+    .card:hover{transform:translateY(-4px); box-shadow:0 16px 40px rgba(2,6,23,.12)}
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Rush Steps</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="rush.html">Rush Steps</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="members.html">Members</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-white text-slate-900 selection:bg-sky-300/40 selection:text-black">
 
-    <section>
-        <h2>Steps to Rush</h2>
-        <ul>
-            <li>Step 1: Attend Info Session</li>
-            <li>Step 2: Fill out Application</li>
-            <li>Step 3: Interview with Members</li>
-            <li>Step 4: Join the Kappa Theta Pi Community!</li>
-        </ul>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Kappa Theta Pi - Ohio State University</p>
-    </footer>
+  <!-- NAVBAR (matches site) -->
+  <header id="nav" class="fixed inset-x-0 top-0 z-50 nav-solid text-slate-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center justify-between py-4">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-full border border-slate-900/20 bg-slate-900/5">
+            <span class="text-sm font-semibold tracking-wider">ΚΘΠ</span>
+          </span>
+          <div>
+            <p class="text-sm font-semibold tracking-wide">Kappa Theta Pi</p>
+            <p class="text-[11px] uppercase tracking-widest">Ohio State Chapter</p>
+          </div>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm">
+          <a href="index.html" class="link-underline">Home</a>
+          <a href="about.html" class="link-underline">About Us</a>
+          <a href="members.html" class="link-underline">Members</a>
+          <a href="rush.html" class="link-underline font-semibold">Rush</a>
+          <a href="gallery.html" class="link-underline">Gallery</a>
+          <a href="contact.html" class="link-underline">Contact</a>
+          <a href="apply.html" class="ml-2 inline-flex items-center rounded-full bg-slate-900 px-4 py-2 text-[13px] font-semibold text-white shadow-sm transition hover:shadow-md hover:-translate-y-0.5">Apply Now</a>
+        </div>
+        <button id="menuBtn" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900/5" aria-label="Open Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+        </button>
+      </nav>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur">
+      <div class="mx-auto max-w-7xl px-6 py-4 space-y-3 text-sm">
+        <a class="block py-2" href="index.html">Home</a>
+        <a class="block py-2" href="about.html">About Us</a>
+        <a class="block py-2" href="members.html">Members</a>
+        <a class="block py-2 font-semibold" href="rush.html">Rush</a>
+        <a class="block py-2" href="gallery.html">Gallery</a>
+        <a class="block py-2" href="contact.html">Contact</a>
+        <a href="apply.html" class="mt-2 inline-flex items-center rounded-full bg-slate-900 px-4 py-2 text-[13px] font-semibold text-white">Apply Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative h-[60vh] w-full overflow-hidden flex items-center justify-center pt-16">
+    <img src="images/group-photo.jpg" alt="KTP Group" class="absolute inset-0 h-full w-full object-cover" style="object-position:center 35%" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/40 to-black/70"></div>
+    <div class="relative z-10 text-center px-6">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white drop-shadow-xl">Rush Kappa Theta Pi</h1>
+      <p class="mt-3 text-white/90 max-w-2xl mx-auto">Join OSU's professional co‑ed technology fraternity.</p>
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="apply.html" class="inline-flex items-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black shadow-lg shadow-black/20 transition hover:-translate-y-0.5">Apply Now</a>
+        <a href="#timeline" class="inline-flex items-center rounded-full bg-white/10 px-5 py-2.5 text-sm font-medium text-white backdrop-blur transition hover:bg-white/20">View Timeline</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO RUSH (steps) -->
+  <section class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <h2 class="text-3xl font-bold text-center tracking-tight">How to Rush</h2>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="text-sm font-semibold text-slate-500">Step 1</div>
+          <h3 class="mt-1 text-lg font-semibold">Come to an Info Session</h3>
+          <p class="mt-2 text-sm text-slate-600">Meet members and learn about ΚΘΠ.</p>
+        </div>
+        <div class="card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="text-sm font-semibold text-slate-500">Step 2</div>
+          <h3 class="mt-1 text-lg font-semibold">Submit Your Application</h3>
+          <p class="mt-2 text-sm text-slate-600">Tell us about yourself and your goals.</p>
+        </div>
+        <div class="card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="text-sm font-semibold text-slate-500">Step 3</div>
+          <h3 class="mt-1 text-lg font-semibold">Participate in Interviews</h3>
+          <p class="mt-2 text-sm text-slate-600">Showcase your experiences and fit.</p>
+        </div>
+        <div class="card rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="text-sm font-semibold text-slate-500">Step 4</div>
+          <h3 class="mt-1 text-lg font-semibold">Receive Your Bid</h3>
+          <p class="mt-2 text-sm text-slate-600">Welcome to the brotherhood.</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="apply.html" class="inline-flex items-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:shadow-md hover:-translate-y-0.5">Start Application</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE OF EVENTS -->
+  <section id="timeline" class="bg-slate-50 py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <h2 class="text-3xl font-bold text-center tracking-tight">Rush Timeline</h2>
+
+      <ol class="relative mt-12 border-s-2 border-slate-200 ps-6">
+        <!-- Involvement Fair -->
+        <li class="mb-10 ms-6">
+          <span class="absolute -start-2.5 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 ring-4 ring-white"></span>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Involvement Fair</h3>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Aug 24</span>
+            </div>
+          </div>
+        </li>
+        <!-- Info Session 1 & 2 -->
+        <li class="mb-10 ms-6">
+          <span class="absolute -start-2.5 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 ring-4 ring-white"></span>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Info Session 1 & 2 — Meet & Greet</h3>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Sep 2–3</span>
+            </div>
+          </div>
+        </li>
+        <!-- Video Application Due -->
+        <li class="mb-10 ms-6">
+          <span class="absolute -start-2.5 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 ring-4 ring-white"></span>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Video Application Due</h3>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Sep 6</span>
+            </div>
+          </div>
+        </li>
+        <!-- QA Panel for Career Paths in Tech -->
+        <li class="mb-10 ms-6">
+          <span class="absolute -start-2.5 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 ring-4 ring-white"></span>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Q&A Panel — Career Paths in Tech</h3>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Sep 8</span>
+            </div>
+          </div>
+        </li>
+        <!-- Professional Interviews -->
+        <li class="mb-10 ms-6">
+          <span class="absolute -start-2.5 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 ring-4 ring-white"></span>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Professional Interviews</h3>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Sep 10–12</span>
+            </div>
+          </div>
+        </li>
+        <!-- Wrap-up Social -->
+        <li class="mb-10 ms-6">
+          <span class="absolute -start-2.5 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 ring-4 ring-white"></span>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Wrap-up Social</h3>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Sep 12</span>
+            </div>
+          </div>
+        </li>
+        <!-- Bid Delivery -->
+        <li class="ms-6">
+          <span class="absolute -start-2.5 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 ring-4 ring-white"></span>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">Bid Delivery</h3>
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">Sep 14</span>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="mt-10 text-center">
+        <a href="apply.html" class="inline-flex items-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:shadow-md hover:-translate-y-0.5">Apply Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black">
+    <div class="mx-auto max-w-7xl px-6 py-10">
+      <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
+        <p class="text-sm text-white/60">© 2025 Kappa Theta Pi — Ohio State Chapter</p>
+        <div class="flex items-center gap-5">
+          <a href="#" class="opacity-80 transition hover:opacity-100" aria-label="Instagram"><img src="images/instagram-icon.svg" class="h-5 w-5" alt="Instagram" /></a>
+          <a href="#" class="opacity-80 transition hover:opacity-100" aria-label="LinkedIn"><img src="images/linkedin-icon.svg" class="h-5 w-5" alt="LinkedIn" /></a>
+          <a href="#" class="opacity-80 transition hover:opacity-100" aria-label="GitHub"><img src="images/github-icon.svg" class="h-5 w-5" alt="GitHub" /></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click',()=> mobileMenu.classList.toggle('hidden'));
+  </script>
 </body>
 </html>
